@@ -28,12 +28,21 @@ export const metadata: Metadata = {
     siteName: 'Neiloy Chaudhuri',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/photos/photo1.png',
+        width: 1200,
+        height: 630,
+        alt: 'Neiloy Chaudhuri',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Neiloy Chaudhuri | Software Engineer',
     description: 'Personal website of Neiloy Chaudhuri - Software Engineer with a passion for design, systems thinking, and building impactful products.',
     creator: '@_neiloy',
+    images: ['/photos/photo1.png'],
   },
   robots: {
     index: true,
