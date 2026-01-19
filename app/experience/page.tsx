@@ -6,19 +6,9 @@ import ExperienceCard from '@/components/ExperienceCard';
 
 const experiences = [
   {
-    role: 'Software Engineering Intern',
-    company: 'TD Bank',
-    period: 'May 2025 – Aug 2025',
-    bullets: [
-      'Developed and optimized backend services for enterprise banking applications',
-      'Collaborated with cross-functional teams to deliver scalable financial technology solutions',
-      'Applied agile methodologies and modern software engineering practices',
-    ],
-  },
-  {
     role: 'Data Engineer Intern',
     company: 'Spectrum Health Care',
-    period: 'Sep 2024 – Dec 2024',
+    period: 'Sep 2025 – Dec 2025',
     bullets: [
       'Built data pipelines to process and analyze healthcare operational data',
       'Developed dashboards and reporting tools for data-driven decision making',
@@ -26,9 +16,19 @@ const experiences = [
     ],
   },
   {
+    role: 'Software Engineering Intern',
+    company: 'TD Bank',
+    period: 'Jan 2025 – May 2025',
+    bullets: [
+      'Developed and optimized backend services for enterprise banking applications',
+      'Collaborated with cross-functional teams to deliver scalable financial technology solutions',
+      'Applied agile methodologies and modern software engineering practices',
+    ],
+  },
+  {
     role: 'Advanced Manufacturing Engineer Intern',
     company: 'Kal-Polymers',
-    period: 'Jan 2024 – Apr 2024',
+    period: 'May 2024 – Aug 2024',
     bullets: [
       'Implemented Industry 4.0 solutions to optimize manufacturing processes',
       'Analyzed production data to identify efficiency improvements and cost savings',
