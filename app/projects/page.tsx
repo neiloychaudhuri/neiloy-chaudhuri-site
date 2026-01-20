@@ -22,7 +22,7 @@ const projects = [
   {
     name: 'Industry 4.0 Case Competition',
     description:
-      'A data-driven high school competition focused on manufacturing, big data, and Industry 4.0, organized at the University of Waterloo as VP of Design.',
+      'A data-driven high school competition focused on manufacturing, big data, and Industry 4.0, organized at the University of Waterloo as Vice President.',
     link: 'https://www.uwindustry4.ca/',
     emphasis: 'Leadership, Systems Thinking, Design Strategy',
   },
