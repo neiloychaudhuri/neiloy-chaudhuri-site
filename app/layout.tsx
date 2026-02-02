@@ -3,6 +3,7 @@ import { Manrope, EB_Garamond } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
+import { Analytics } from '@vercel/analytics/next';
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
@@ -64,6 +65,7 @@ export default function RootLayout({
             {children}
           </main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
