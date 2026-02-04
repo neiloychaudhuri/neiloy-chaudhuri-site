@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Script from 'next/script';
 import PageTransition from '@/components/PageTransition';
 import SocialIcon from '@/components/SocialIcon';
 import { FiMail, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
@@ -65,6 +66,21 @@ export default function Contact() {
                 index={index}
               />
             ))}
+          </motion.div>
+
+          {/* UWaterloo Webring */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex justify-center mt-10"
+          >
+            <Script
+              src="https://uwaterloo.network/embed.js"
+              data-webring=""
+              data-user="neiloy"
+              strategy="lazyOnload"
+            />
           </motion.div>
 
           {/* Decorative elements */}
