@@ -118,3 +118,41 @@
   }
 }
 
+/* UWaterloo Webring Styling */
+.uwnetwork-webring {
+  @apply p-5 rounded-2xl;
+  @apply bg-earth-50/70 dark:bg-earth-800/60;
+  @apply backdrop-blur-md;
+  @apply border border-earth-200/50 dark:border-earth-700/50;
+  @apply shadow-lg shadow-earth-900/5 dark:shadow-black/20;
+  @apply transition-all duration-300;
+}
+
+.uwnetwork-webring:hover {
+  @apply shadow-xl shadow-earth-900/10 dark:shadow-black/30;
+  @apply shadow-[0_0_30px_rgba(196,167,125,0.3)] dark:shadow-[0_0_30px_rgba(196,167,125,0.2)];
+}
+
+/* Hide arrows */
+.uwnetwork-webring a[href*="prev"],
+.uwnetwork-webring a[href*="next"],
+.uwnetwork-webring .prev,
+.uwnetwork-webring .next,
+.uwnetwork-webring [class*="arrow"],
+.uwnetwork-webring [class*="nav"] {
+  display: none !important;
+}
+
+/* Style the webring text/link */
+.uwnetwork-webring a {
+  @apply text-earth-600 dark:text-earth-400;
+  @apply hover:text-earth-800 dark:hover:text-earth-200;
+  @apply transition-colors duration-200;
+  text-decoration: none !important;
+}
+
+.uwnetwork-webring span,
+.uwnetwork-webring p {
+  @apply text-earth-600 dark:text-earth-400;
+}
+
