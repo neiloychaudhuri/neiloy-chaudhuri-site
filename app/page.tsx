@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
 import StarField from "@/components/StarField";
-import TravelGlobe from "@/components/TravelGlobe";
 import ProjectCard from "@/components/ProjectCard";
-import { travelPhotos } from "@/app/data/travelPhotos";
+import DecryptedText from "@/components/DecryptedText";
 import ExperienceCard from "@/components/ExperienceCard";
 import SocialIcon from "@/components/SocialIcon";
 import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
@@ -98,9 +97,6 @@ export default function Home() {
         {/* Animated stars background */}
         <StarField />
 
-        {/* Interactive globe with travel photos */}
-        <TravelGlobe photos={travelPhotos} />
-
         <div className="section-container relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,15 +105,15 @@ export default function Home() {
             className="max-w-2xl"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl mb-3 text-earth-800 dark:text-earth-100 font-semibold">
-              Neiloy Chaudhuri
+              <DecryptedText text="Neiloy C." />
             </h1>
 
             <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-8">
-              Software Engineer
+              Management Engineering @ University of Waterloo
             </p>
 
             <p className="text-base sm:text-lg text-earth-700 dark:text-earth-300 mb-8 leading-relaxed">
-              Building multiplayer systems and one-ups to what already exists.
+              Building fast and learning even faster.
             </p>
 
             <div className="space-y-2 text-sm sm:text-base text-earth-600 dark:text-earth-400">

@@ -1,0 +1,65 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+
+interface DecryptedTextProps {
+  text: string;
+  className?: string;
+  /** Total duration of the decrypt animation in ms */
+  duration?: number;
+}
+
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*".split("");
+
+export default function DecryptedText({
+  text,
+  className,
+  duration = 1400,
+}: DecryptedTextProps) {
+  const [frame, setFrame] = useState(0);
+
+  const steps = useMemo(() => {
+    const length = text.length;
+    if (length === 0) return [];
+    const totalFrames = Math.max(length * 4, Math.floor(duration / 16));
+    const stepSize = Math.max(1, Math.floor(totalFrames / length));
+    return Array.from({ length }, (_, i) => (i + 1) * stepSize);
+  }, [text, duration]);
+
+  useEffect(() => {
+    if (!text) return;
+    setFrame(0);
+
+    let animationFrame: number;
+    const loop = () => {
+      setFrame((prev) => {
+        if (!steps.length || prev >= steps[steps.length - 1]) {
+          return steps[steps.length - 1];
+        }
+        return prev + 1;
+      });
+      animationFrame = requestAnimationFrame(loop);
+    };
+
+    animationFrame = requestAnimationFrame(loop);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [text, steps]);
+
+  const display = useMemo(() => {
+    if (!steps.length) return text;
+    return text
+      .split("")
+      .map((char, index) => {
+        const revealFrame = steps[index];
+        if (frame >= revealFrame) return char;
+        if (char === " ") return " ";
+        const rand = Math.floor(Math.random() * CHARS.length);
+        return CHARS[rand];
+      })
+      .join("");
+  }, [text, frame, steps]);
+
+  return <span className={className}>{display}</span>;
+}
+
