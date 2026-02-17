@@ -1,197 +1,277 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import PageTransition from '@/components/PageTransition';
-import StarField from '@/components/StarField';
-import PeekingMoon from '@/components/PeekingMoon';
-import { FiArrowRight } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import PageTransition from "@/components/PageTransition";
+import StarField from "@/components/StarField";
+import PeekingMoon from "@/components/PeekingMoon";
+import ProjectCard from "@/components/ProjectCard";
+import ExperienceCard from "@/components/ExperienceCard";
+import SocialIcon from "@/components/SocialIcon";
+import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
-const photos = [
-  { src: '/photos/photo1.png', alt: 'Neiloy at a cultural celebration' },
-  { src: '/photos/photo2.png', alt: 'Neiloy overlooking a city view' },
-  { src: '/photos/photo3.png', alt: 'Neiloy at Sagrada Familia' },
+const flagshipProjects = [
+  {
+    name: "CyberCTRL",
+    description:
+      "AI-powered browser extension that flags risky code and dependencies before they reach your editor.",
+    link: "https://devpost.com/software/devguard",
+    emphasis: "Developer Security, AI Integration, Product Thinking",
+    role: "Built the extension MVP and end-to-end flow.",
+    outcome:
+      "Surfaced warnings at the copy-paste step instead of after deployment.",
+    tech: "TypeScript, Chrome APIs, OpenAI API",
+  },
+  {
+    name: "ImpostorGPT",
+    description:
+      "A pass-the-phone social deduction game with real-time, turn-based logic and AI-assisted prompts.",
+    link: "https://github.com/neiloychaudhuri/ImpostorGPT",
+    emphasis: "Real-time Systems, Full Stack",
+    role: "Owned game design, backend, and client experience.",
+    outcome: "Kept multiple concurrent games in sync with low-latency updates.",
+    tech: "React, Node.js, Socket.io, Redis",
+  },
+];
+
+const experiences = [
+  {
+    role: "Data Engineer Intern",
+    company: "Spectrum Health Care",
+    period: "Sep 2025 – Dec 2025",
+    bullets: [
+      "Built data pipelines to process and analyze healthcare operational data.",
+      "Developed dashboards and reporting tools for data-driven decision making.",
+      "Improved data quality and accessibility across organizational systems.",
+    ],
+  },
+  {
+    role: "Software Engineering Intern",
+    company: "TD Bank",
+    period: "Jan 2025 – May 2025",
+    bullets: [
+      "Developed and optimized backend services for enterprise banking applications.",
+      "Collaborated with cross-functional teams to deliver scalable financial technology solutions.",
+      "Applied agile methodologies and modern software engineering practices.",
+    ],
+  },
+  {
+    role: "Advanced Manufacturing Engineer Intern",
+    company: "Kal-Polymers",
+    period: "May 2024 – Aug 2024",
+    bullets: [
+      "Implemented Industry 4.0 solutions to optimize manufacturing processes.",
+      "Analyzed production data to identify efficiency improvements and cost savings.",
+      "Designed automation workflows for quality control and inventory management.",
+    ],
+  },
+];
+
+const socials = [
+  {
+    href: "mailto:neiloy.chaudhuri@uwaterloo.ca",
+    icon: FiMail,
+    label: "Email",
+  },
+  {
+    href: "https://github.com/neiloychaudhuri",
+    icon: FiGithub,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/neiloyc/",
+    icon: FiLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://x.com/_neiloy",
+    icon: FiTwitter,
+    label: "X (Twitter)",
+  },
 ];
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-shuffle photos with quick snap
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % photos.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <PageTransition>
-      <section className="h-[calc(100vh-5rem)] flex items-center justify-center relative overflow-hidden">
+      <section className="py-12 sm:py-16 relative overflow-hidden">
         {/* Animated stars background */}
         <StarField />
-        
+
         {/* Moon peeking from the right */}
         <PeekingMoon />
-        
+
         <div className="section-container relative z-10">
-          <div className="flex flex-row gap-12 items-center justify-center">
-            
-            {/* Left side - Card shuffle photos (hidden on small screens) */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="hidden md:flex flex-shrink-0 items-center justify-center"
-            >
-              <div className="relative h-[500px] flex items-center justify-center">
-                {/* Card stack */}
-                <div className="relative w-[300px] h-[400px]">
-                  {photos.map((photo, index) => {
-                    const offset = (index - currentIndex + photos.length) % photos.length;
-                    const isActive = offset === 0;
-                    const isBehind1 = offset === 1 || offset === -2;
-                    const isBehind2 = offset === 2 || offset === -1;
-                    
-                    return (
-                      <motion.div
-                        key={photo.src}
-                        className="absolute inset-0"
-                        initial={false}
-                        animate={{
-                          scale: isActive ? 1 : isBehind1 ? 0.92 : 0.84,
-                          y: isActive ? 0 : isBehind1 ? 15 : 30,
-                          x: isActive ? 0 : isBehind1 ? 8 : 16,
-                          rotateZ: isActive ? 0 : isBehind1 ? 2 : 4,
-                          opacity: isActive ? 1 : isBehind1 ? 0.6 : 0.3,
-                          zIndex: isActive ? 30 : isBehind1 ? 20 : 10,
-                        }}
-                        transition={{
-                          type: 'spring',
-                          stiffness: 400,
-                          damping: 30,
-                        }}
-                      >
-                        {/* Glow effect for active card */}
-                        {isActive && (
-                          <motion.div
-                            className="absolute -inset-3 rounded-2xl
-                                       bg-earth-400/20 dark:bg-earth-400/15 blur-xl"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.3 }}
-                          />
-                        )}
-                        
-                        <div className={`relative h-full overflow-hidden rounded-2xl
-                                        ring-2 ${isActive 
-                                          ? 'ring-earth-400/50 dark:ring-earth-500/50' 
-                                          : 'ring-earth-200/30 dark:ring-earth-700/30'}
-                                        shadow-xl shadow-earth-900/20 dark:shadow-black/40`}>
-                          <Image
-                            src={photo.src}
-                            alt={photo.alt}
-                            fill
-                            className="object-cover"
-                            sizes="300px"
-                          />
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-3 text-earth-800 dark:text-earth-100 font-semibold">
+              Neiloy Chaudhuri
+            </h1>
 
-                {/* Shuffle indicator dots */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {photos.map((_, index) => (
-                    <motion.button
-                      key={index}
-                      onClick={() => setCurrentIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-colors duration-300
-                                  ${index === currentIndex 
-                                    ? 'bg-earth-600 dark:bg-earth-400' 
-                                    : 'bg-earth-300 dark:bg-earth-700'}`}
-                      whileHover={{ scale: 1.3 }}
-                      whileTap={{ scale: 0.9 }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-8">
+              Software Engineer
+            </p>
 
-            {/* Right side - Hero content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-center md:text-left"
+            <p className="text-base sm:text-lg text-earth-700 dark:text-earth-300 mb-8 leading-relaxed">
+              Building multiplayer systems and one-ups to what already exists.
+            </p>
+
+            <div className="space-y-2 text-sm sm:text-base text-earth-600 dark:text-earth-400">
+              <p className="font-semibold text-earth-800 dark:text-earth-200 mb-3">
+                What you should know:
+              </p>
+              <p>
+                • Shipped production systems at TD Bank, Spectrum Health Care,
+                and Kal-Polymers
+              </p>
+              <p>
+                • Built real-time multiplayer games and AI-powered devtools from
+                scratch
+              </p>
+              <p>
+                • Led Industry 4.0 competition as VP, organizing data-driven
+                events for 100+ students
+              </p>
+              <p>
+                • Debug from first principles, design with constraints, ship
+                tight end-to-end slices
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Flagship projects preview */}
+      <section id="projects" className="py-12 sm:py-16">
+        <div className="section-container">
+          <div className="flex items-baseline justify-between mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200">
+              Selected work
+            </h2>
+            <Link
+              href="/projects"
+              className="text-sm text-earth-600 dark:text-earth-400 hover:text-earth-800 dark:hover:text-earth-200 underline-offset-4 hover:underline"
             >
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-earth-500 dark:text-earth-500 text-lg mb-4 font-medium"
-              >
-                Hi, I&apos;m
-              </motion.p>
-              
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-6xl sm:text-7xl md:text-8xl mb-8
-                           text-earth-700 dark:text-earth-100
-                           font-serif italic"
-              >
-                Neiloy
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-xl sm:text-2xl md:text-3xl text-earth-600 dark:text-earth-400
-                           max-w-2xl mx-auto md:mx-0 mb-10 leading-relaxed"
-              >
-                I design systems and build products that bridge the gap between{' '}
-                <span className="text-earth-700 dark:text-earth-300 font-semibold">
-                  engineering
-                </span>{' '}
-                and{' '}
-                <span className="text-earth-700 dark:text-earth-300 font-semibold">
-                  human experience
-                </span>
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center"
-              >
-                <Link href="/projects">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center gap-2 text-lg"
-                  >
-                    View Projects
-                    <FiArrowRight className="w-5 h-5" />
-                  </motion.button>
-                </Link>
-                
-                <Link href="/about">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-secondary text-lg"
-                  >
-                    About Me
-                  </motion.button>
-                </Link>
-              </motion.div>
-            </motion.div>
+              View all projects
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {flagshipProjects.map((project, index) => (
+              <ProjectCard
+                key={project.name}
+                name={project.name}
+                description={project.description}
+                link={project.link}
+                emphasis={project.emphasis}
+                index={index}
+                role={project.role}
+                tech={project.tech}
+                outcome={project.outcome}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About / how I work */}
+      <section id="about" className="py-16 sm:py-20">
+        <div className="section-container max-w-4xl">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+              About
+            </h2>
+            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg leading-relaxed">
+              I&apos;m a Management Engineering student at the University of
+              Waterloo who builds software at the intersection of systems, data,
+              and user experience. I like taking ambiguous problems and turning
+              them into small, production-ready pieces that real people can use.
+            </p>
+          </div>
+
+          <div className="glass-card p-6 sm:p-8 space-y-4">
+            <h3 className="text-lg font-semibold text-earth-800 dark:text-earth-200">
+              How I work
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-earth-700 dark:text-earth-300">
+              <li>
+                <span className="font-medium">
+                  Ship tight end-to-end slices
+                </span>{" "}
+                instead of sprawling, half-finished systems.
+              </li>
+              <li>
+                <span className="font-medium">Debug from first principles</span>{" "}
+                by tracing data and requests through the stack.
+              </li>
+              <li>
+                <span className="font-medium">
+                  Design with constraints in mind
+                </span>{" "}
+                – infra, time, and the people who will maintain the system.
+              </li>
+              <li>
+                <span className="font-medium">Communicate clearly</span> so
+                teammates understand trade-offs and decisions without guesswork.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience timeline */}
+      <section id="experience" className="py-16 sm:py-20">
+        <div className="section-container max-w-4xl">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+              Experience
+            </h2>
+            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg">
+              Recent roles across healthcare, banking, and manufacturing.
+            </p>
+          </div>
+
+          <div className="relative">
+            {experiences.map((exp, index) => (
+              <ExperienceCard
+                key={`${exp.company}-${exp.role}`}
+                role={exp.role}
+                company={exp.company}
+                period={exp.period}
+                bullets={exp.bullets}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact / social links */}
+      <section id="contact" className="py-16 sm:py-20">
+        <div className="section-container">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+              Get in touch
+            </h2>
+            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg max-w-md mx-auto">
+              Open to software roles, collaborations, and conversations about
+              systems, data, and product.
+            </p>
+          </div>
+
+          <div className="flex justify-center gap-6 flex-wrap items-center">
+            {socials.map((social, index) => (
+              <SocialIcon
+                key={social.label}
+                href={social.href}
+                icon={social.icon}
+                label={social.label}
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </section>
