@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
 import StarField from "@/components/StarField";
-import PeekingMoon from "@/components/PeekingMoon";
+import TravelGlobe from "@/components/TravelGlobe";
 import ProjectCard from "@/components/ProjectCard";
+import { travelPhotos } from "@/app/data/travelPhotos";
 import ExperienceCard from "@/components/ExperienceCard";
 import SocialIcon from "@/components/SocialIcon";
 import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
@@ -97,8 +98,8 @@ export default function Home() {
         {/* Animated stars background */}
         <StarField />
 
-        {/* Moon peeking from the right */}
-        <PeekingMoon />
+        {/* Interactive globe with travel photos */}
+        <TravelGlobe photos={travelPhotos} />
 
         <div className="section-container relative z-10">
           <motion.div
