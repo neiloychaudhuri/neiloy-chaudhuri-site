@@ -2,11 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
-import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -58,30 +56,11 @@ export default function Navbar() {
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'glass py-3'
+            ? 'py-3 bg-transparent backdrop-blur-sm'
             : 'bg-transparent py-5'
         }`}
       >
-        <nav className="section-container flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative w-10 h-10 rounded-full overflow-hidden
-                         ring-2 ring-earth-300 dark:ring-earth-600
-                         group-hover:ring-earth-500 dark:group-hover:ring-earth-400
-                         transition-all duration-200"
-            >
-              <Image
-                src="https://github.com/neiloychaudhuri.png"
-                alt="Neiloy"
-                fill
-                className="object-cover"
-                sizes="40px"
-              />
-            </motion.div>
-          </Link>
+        <nav className="section-container relative flex items-center justify-center">
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -112,12 +91,10 @@ export default function Navbar() {
               Resume
             </a>
 
-            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
+          <div className="flex items-center gap-4 md:hidden absolute right-6 sm:right-8 lg:right-12">
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-earth-200/50 dark:hover:bg-earth-700/50

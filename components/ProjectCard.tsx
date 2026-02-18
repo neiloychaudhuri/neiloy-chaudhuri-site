@@ -19,7 +19,7 @@ export default function ProjectCard({
   description,
   link,
   emphasis,
-  index,
+  index: _index,
   role,
   tech,
   outcome,
@@ -29,14 +29,6 @@ export default function ProjectCard({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
       whileHover={{ scale: 1.02, y: -5 }}
       className="block glass-card p-8 cursor-pointer group glow-hover"
     >

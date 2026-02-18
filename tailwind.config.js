@@ -8,19 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Earth-tone palette
+        // Neutral grayscale palette (no blue tint)
         earth: {
-          50: '#FAF7F2',   // Warm off-white (light bg)
-          100: '#F5EFE6',  // Lighter cream
-          200: '#E8DDD0',  // Tan/cream
-          300: '#D4C4B0',  // Light brown
-          400: '#C4A77D',  // Warm tan accent
-          500: '#A68B5B',  // Medium brown
-          600: '#8B7355',  // Brown accent
-          700: '#6B5344',  // Dark brown
-          800: '#4A3728',  // Deep brown
-          900: '#1A1614',  // Near-black brown (dark bg)
-          950: '#0F0D0C',  // Deepest brown
+          50: '#fafafa',
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#a1a1aa',
+          500: '#71717a',
+          600: '#52525b',
+          700: '#3f3f46',
+          800: '#27272a',
+          900: '#18181b',
+          950: '#09090b',
         },
       },
       fontFamily: {
@@ -50,8 +50,8 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(196, 167, 125, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(196, 167, 125, 0.4)' },
+          '0%': { boxShadow: '0 0 5px rgba(161, 161, 170, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(161, 161, 170, 0.4)' },
         },
       },
     },

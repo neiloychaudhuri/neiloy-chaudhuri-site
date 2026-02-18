@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 import StarField from '@/components/StarField';
 
@@ -14,32 +13,17 @@ export default function About() {
         <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-8"
-            >
+            <div className="mb-8">
               <h1 className="text-4xl sm:text-5xl font-bold text-earth-800 dark:text-earth-200 mb-4">
                 About Me
               </h1>
               <div className="w-20 h-1 bg-earth-500 dark:bg-earth-400 rounded-full" />
-            </motion.div>
+            </div>
 
             {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="glass-card p-8 sm:p-10"
-            >
+            <div className="glass-card p-8 sm:p-10">
               <div className="space-y-8 text-lg text-earth-700 dark:text-earth-300 leading-relaxed">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                  className="space-y-3"
-                >
+                <div className="space-y-3">
                   <p>
                     I&apos;m a{' '}
                     <span className="font-semibold text-earth-800 dark:text-earth-200">
@@ -57,14 +41,9 @@ export default function About() {
                     Outside internships, I helped run the{' '}
                     <span className="font-medium">Industry 4.0 Case Competition</span> as a VP and organizer.
                   </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  className="space-y-3"
-                >
+                <div className="space-y-3">
                   <h2 className="text-xl font-semibold text-earth-800 dark:text-earth-200">
                     How I think about engineering
                   </h2>
@@ -74,14 +53,9 @@ export default function About() {
                     systems thinking to understand how a small change in one part of the stack affects
                     reliability, operations, and the user experience.
                   </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
-                  className="space-y-3"
-                >
+                <div className="space-y-3">
                   <h2 className="text-xl font-semibold text-earth-800 dark:text-earth-200">
                     How I work
                   </h2>
@@ -103,9 +77,9 @@ export default function About() {
                       trade-offs so teammates can follow the reasoning.
                     </li>
                   </ul>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Decorative elements */}

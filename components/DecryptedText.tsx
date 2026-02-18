@@ -17,6 +17,7 @@ export default function DecryptedText({
   duration = 1400,
 }: DecryptedTextProps) {
   const [frame, setFrame] = useState(0);
+  const [canStart, setCanStart] = useState(false);
 
   const steps = useMemo(() => {
     const length = text.length;
@@ -27,7 +28,19 @@ export default function DecryptedText({
   }, [text, duration]);
 
   useEffect(() => {
-    if (!text) return;
+    const appWindow = window as Window & { __appLoaderDone?: boolean };
+    if (appWindow.__appLoaderDone) {
+      setCanStart(true);
+      return;
+    }
+
+    const handleLoaderDone = () => setCanStart(true);
+    window.addEventListener("app-loader-finished", handleLoaderDone);
+    return () => window.removeEventListener("app-loader-finished", handleLoaderDone);
+  }, []);
+
+  useEffect(() => {
+    if (!text || !canStart) return;
     setFrame(0);
 
     let animationFrame: number;
@@ -44,10 +57,10 @@ export default function DecryptedText({
     animationFrame = requestAnimationFrame(loop);
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [text, steps]);
+  }, [text, steps, canStart]);
 
   const display = useMemo(() => {
-    if (!steps.length) return text;
+    if (!canStart || !steps.length) return text;
     return text
       .split("")
       .map((char, index) => {
@@ -58,7 +71,7 @@ export default function DecryptedText({
         return CHARS[rand];
       })
       .join("");
-  }, [text, frame, steps]);
+  }, [text, frame, steps, canStart]);
 
   return <span className={className}>{display}</span>;
 }

@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
-import StarField from "@/components/StarField";
+import Galaxy from "@/components/Galaxy";
 import ProjectCard from "@/components/ProjectCard";
 import DecryptedText from "@/components/DecryptedText";
 import ExperienceCard from "@/components/ExperienceCard";
@@ -93,185 +92,187 @@ const socials = [
 export default function Home() {
   return (
     <PageTransition>
-      <section className="py-12 sm:py-16 relative overflow-hidden">
-        {/* Animated stars background */}
-        <StarField />
+      <div className="fixed inset-0 z-0 bg-[#050505]">
+        <Galaxy starSpeed={0.25} />
+      </div>
 
-        <div className="section-container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-3 text-earth-800 dark:text-earth-100 font-semibold">
-              <DecryptedText text="Neiloy C." />
-            </h1>
+      <div className="relative z-10">
+        <section className="py-12 sm:py-16 relative overflow-hidden">
+          <div className="section-container">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl mb-3 text-earth-800 dark:text-earth-100 font-semibold">
+                <DecryptedText text="Neiloy Chaudhuri" />
+              </h1>
 
-            <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-8">
-              Management Engineering @ University of Waterloo
-            </p>
+              <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-8">
+                Management Engineering @ University of Waterloo
+              </p>
 
-            <p className="text-base sm:text-lg text-earth-700 dark:text-earth-300 mb-8 leading-relaxed">
-              Building fast and learning even faster.
-            </p>
+              <p className="text-base sm:text-lg text-earth-700 dark:text-earth-300 mb-8 leading-relaxed">
+                Building fast and learning even faster.
+              </p>
 
-            <div className="space-y-2 text-sm sm:text-base text-earth-600 dark:text-earth-400">
-              <p className="font-semibold text-earth-800 dark:text-earth-200 mb-3">
-                What you should know:
-              </p>
-              <p>
-                • Shipped production systems at TD Bank, Spectrum Health Care,
-                and Kal-Polymers
-              </p>
-              <p>
-                • Built real-time multiplayer games and AI-powered devtools from
-                scratch
-              </p>
-              <p>
-                • Led Industry 4.0 competition as VP, organizing data-driven
-                events for 100+ students
-              </p>
-              <p>
-                • Debug from first principles, design with constraints, ship
-                tight end-to-end slices
+              <div className="space-y-2 text-sm sm:text-base text-earth-600 dark:text-earth-400">
+                <p className="font-semibold text-earth-800 dark:text-earth-200 mb-3">
+                  What you should know:
+                </p>
+                <p>
+                  • Shipped production systems at TD Bank, Spectrum Health Care,
+                  and Kal-Polymers
+                </p>
+                <p>
+                  • Built real-time multiplayer games and AI-powered devtools
+                  from scratch
+                </p>
+                <p>
+                  • Led Industry 4.0 competition as VP, organizing data-driven
+                  events for 100+ students
+                </p>
+                <p>
+                  • Debug from first principles, design with constraints, ship
+                  tight end-to-end slices
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Flagship projects preview */}
+        <section id="projects" className="py-12 sm:py-16">
+          <div className="section-container">
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200">
+                Selected work
+              </h2>
+              <Link
+                href="/projects"
+                className="text-sm text-earth-600 dark:text-earth-400 hover:text-earth-800 dark:hover:text-earth-200 underline-offset-4 hover:underline"
+              >
+                View all projects
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {flagshipProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.name}
+                  name={project.name}
+                  description={project.description}
+                  link={project.link}
+                  emphasis={project.emphasis}
+                  index={index}
+                  role={project.role}
+                  tech={project.tech}
+                  outcome={project.outcome}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* About / how I work */}
+        <section id="about" className="py-16 sm:py-20">
+          <div className="section-container max-w-4xl">
+            <div className="mb-8">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+                About
+              </h2>
+              <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg leading-relaxed">
+                I&apos;m a Management Engineering student at the University of
+                Waterloo who builds software at the intersection of systems,
+                data, and user experience. I like taking ambiguous problems and
+                turning them into small, production-ready pieces that real
+                people can use.
               </p>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Flagship projects preview */}
-      <section id="projects" className="py-12 sm:py-16">
-        <div className="section-container">
-          <div className="flex items-baseline justify-between mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200">
-              Selected work
-            </h2>
-            <Link
-              href="/projects"
-              className="text-sm text-earth-600 dark:text-earth-400 hover:text-earth-800 dark:hover:text-earth-200 underline-offset-4 hover:underline"
-            >
-              View all projects
-            </Link>
+            <div className="glass-card p-6 sm:p-8 space-y-4">
+              <h3 className="text-lg font-semibold text-earth-800 dark:text-earth-200">
+                How I work
+              </h3>
+              <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-earth-700 dark:text-earth-300">
+                <li>
+                  <span className="font-medium">
+                    Ship tight end-to-end slices
+                  </span>{" "}
+                  instead of sprawling, half-finished systems.
+                </li>
+                <li>
+                  <span className="font-medium">
+                    Debug from first principles
+                  </span>{" "}
+                  by tracing data and requests through the stack.
+                </li>
+                <li>
+                  <span className="font-medium">
+                    Design with constraints in mind
+                  </span>{" "}
+                  – infra, time, and the people who will maintain the system.
+                </li>
+                <li>
+                  <span className="font-medium">Communicate clearly</span> so
+                  teammates understand trade-offs and decisions without
+                  guesswork.
+                </li>
+              </ul>
+            </div>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {flagshipProjects.map((project, index) => (
-              <ProjectCard
-                key={project.name}
-                name={project.name}
-                description={project.description}
-                link={project.link}
-                emphasis={project.emphasis}
-                index={index}
-                role={project.role}
-                tech={project.tech}
-                outcome={project.outcome}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Experience timeline */}
+        <section id="experience" className="py-16 sm:py-20">
+          <div className="section-container max-w-4xl">
+            <div className="mb-8">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+                Experience
+              </h2>
+              <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg">
+                Recent roles across healthcare, banking, and manufacturing.
+              </p>
+            </div>
 
-      {/* About / how I work */}
-      <section id="about" className="py-16 sm:py-20">
-        <div className="section-container max-w-4xl">
-          <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
-              About
-            </h2>
-            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg leading-relaxed">
-              I&apos;m a Management Engineering student at the University of
-              Waterloo who builds software at the intersection of systems, data,
-              and user experience. I like taking ambiguous problems and turning
-              them into small, production-ready pieces that real people can use.
-            </p>
+            <div className="relative">
+              {experiences.map((exp, index) => (
+                <ExperienceCard
+                  key={`${exp.company}-${exp.role}`}
+                  role={exp.role}
+                  company={exp.company}
+                  period={exp.period}
+                  bullets={exp.bullets}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="glass-card p-6 sm:p-8 space-y-4">
-            <h3 className="text-lg font-semibold text-earth-800 dark:text-earth-200">
-              How I work
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-earth-700 dark:text-earth-300">
-              <li>
-                <span className="font-medium">
-                  Ship tight end-to-end slices
-                </span>{" "}
-                instead of sprawling, half-finished systems.
-              </li>
-              <li>
-                <span className="font-medium">Debug from first principles</span>{" "}
-                by tracing data and requests through the stack.
-              </li>
-              <li>
-                <span className="font-medium">
-                  Design with constraints in mind
-                </span>{" "}
-                – infra, time, and the people who will maintain the system.
-              </li>
-              <li>
-                <span className="font-medium">Communicate clearly</span> so
-                teammates understand trade-offs and decisions without guesswork.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        {/* Contact / social links */}
+        <section id="contact" className="py-16 sm:py-20">
+          <div className="section-container">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
+                Get in touch
+              </h2>
+              <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg max-w-md mx-auto">
+                Open to software roles, collaborations, and conversations about
+                systems, data, and product.
+              </p>
+            </div>
 
-      {/* Experience timeline */}
-      <section id="experience" className="py-16 sm:py-20">
-        <div className="section-container max-w-4xl">
-          <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
-              Experience
-            </h2>
-            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg">
-              Recent roles across healthcare, banking, and manufacturing.
-            </p>
+            <div className="flex justify-center gap-6 flex-wrap items-center">
+              {socials.map((social, index) => (
+                <SocialIcon
+                  key={social.label}
+                  href={social.href}
+                  icon={social.icon}
+                  label={social.label}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
-
-          <div className="relative">
-            {experiences.map((exp, index) => (
-              <ExperienceCard
-                key={`${exp.company}-${exp.role}`}
-                role={exp.role}
-                company={exp.company}
-                period={exp.period}
-                bullets={exp.bullets}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact / social links */}
-      <section id="contact" className="py-16 sm:py-20">
-        <div className="section-container">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
-              Get in touch
-            </h2>
-            <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg max-w-md mx-auto">
-              Open to software roles, collaborations, and conversations about
-              systems, data, and product.
-            </p>
-          </div>
-
-          <div className="flex justify-center gap-6 flex-wrap items-center">
-            {socials.map((social, index) => (
-              <SocialIcon
-                key={social.label}
-                href={social.href}
-                icon={social.icon}
-                label={social.label}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </PageTransition>
   );
 }

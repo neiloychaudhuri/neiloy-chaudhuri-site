@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 import ProjectCard from '@/components/ProjectCard';
 
@@ -46,12 +45,7 @@ export default function Projects() {
       <section className="py-16 sm:py-24">
         <div className="section-container">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-12"
-          >
+          <div className="mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-earth-800 dark:text-earth-200 mb-4">
               Projects
             </h1>
@@ -60,7 +54,7 @@ export default function Projects() {
               A selection of projects that showcase my approach to building 
               thoughtful, impactful software.
             </p>
-          </motion.div>
+          </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

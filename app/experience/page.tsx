@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 import ExperienceCard from '@/components/ExperienceCard';
 
@@ -43,12 +42,7 @@ export default function Experience() {
       <section className="py-16 sm:py-24">
         <div className="section-container max-w-4xl">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-12"
-          >
+          <div className="mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-earth-800 dark:text-earth-200 mb-4">
               Experience
             </h1>
@@ -56,7 +50,7 @@ export default function Experience() {
             <p className="text-earth-600 dark:text-earth-400 text-lg max-w-2xl">
               My professional journey across software engineering, data, and manufacturing.
             </p>
-          </motion.div>
+          </div>
 
           {/* Timeline */}
           <div className="relative">
