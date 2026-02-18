@@ -73,6 +73,18 @@ export default function DecryptedText({
       .join("");
   }, [text, frame, steps, canStart]);
 
-  return <span className={className}>{display}</span>;
+  return (
+    <span className={className} aria-label={text}>
+      <span className="relative inline-block whitespace-nowrap align-baseline">
+        {/* Reserve final width so scrambling does not cause layout shift */}
+        <span className="invisible" aria-hidden="true">
+          {text}
+        </span>
+        <span className="absolute inset-0" aria-hidden="true">
+          {display}
+        </span>
+      </span>
+    </span>
+  );
 }
 
