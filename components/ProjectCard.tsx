@@ -9,6 +9,9 @@ interface ProjectCardProps {
   link: string;
   emphasis: string;
   index: number;
+  role?: string;
+  tech?: string;
+  outcome?: string;
 }
 
 export default function ProjectCard({
@@ -16,21 +19,16 @@ export default function ProjectCard({
   description,
   link,
   emphasis,
-  index,
+  index: _index,
+  role,
+  tech,
+  outcome,
 }: ProjectCardProps) {
   return (
     <motion.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
       whileHover={{ scale: 1.02, y: -5 }}
       className="block glass-card p-8 cursor-pointer group glow-hover"
     >
@@ -46,9 +44,29 @@ export default function ProjectCard({
                                     group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
       
-      <p className="text-earth-600 dark:text-earth-400 mb-6 leading-relaxed">
+      <p className="text-earth-600 dark:text-earth-400 mb-4 leading-relaxed">
         {description}
       </p>
+
+      {(role || outcome || tech) && (
+        <div className="mb-4 space-y-1 text-sm text-earth-700 dark:text-earth-300">
+          {role && (
+            <p>
+              <span className="font-medium">Role:</span> {role}
+            </p>
+          )}
+          {outcome && (
+            <p>
+              <span className="font-medium">Outcome:</span> {outcome}
+            </p>
+          )}
+          {tech && (
+            <p className="text-xs text-earth-500 dark:text-earth-400">
+              Tech: {tech}
+            </p>
+          )}
+        </div>
+      )}
       
       <div className="flex flex-wrap gap-2">
         {emphasis.split(', ').map((tag, i) => (

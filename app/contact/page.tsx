@@ -34,12 +34,7 @@ export default function Contact() {
       <section className="py-16 sm:py-24 min-h-[calc(100vh-16rem)] flex items-center">
         <div className="section-container">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-earth-800 dark:text-earth-200 mb-4">
               Get in Touch
             </h1>
@@ -47,15 +42,10 @@ export default function Contact() {
             <p className="text-earth-600 dark:text-earth-400 text-lg max-w-md mx-auto">
               Always open to new opportunities and conversations.
             </p>
-          </motion.div>
+          </div>
 
           {/* Social Icons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex justify-center gap-6 flex-wrap items-center"
-          >
+          <div className="flex justify-center gap-6 flex-wrap items-center">
             {socials.map((social, index) => (
               <SocialIcon
                 key={social.label}
@@ -68,10 +58,6 @@ export default function Contact() {
             
             {/* UWaterloo Webring */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.4 }}
               whileHover={{ scale: 1.15, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className="p-5 rounded-2xl glass-card glow-hover flex items-center justify-center"
@@ -88,7 +74,7 @@ export default function Contact() {
                 </svg>
               </a>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Decorative elements */}
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full

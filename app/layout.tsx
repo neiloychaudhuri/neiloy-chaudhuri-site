@@ -3,6 +3,7 @@ import { Manrope, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
+import AppLoader from "@/components/AppLoader";
 import { Analytics } from "@vercel/analytics/next";
 const manrope = Manrope({
   subsets: ["latin"],
@@ -72,8 +73,10 @@ export default function RootLayout({
         className={`${manrope.variable} ${ebGaramond.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1 pt-20">{children}</main>
+          <AppLoader>
+            <Navbar />
+            <main className="flex-1 pt-20">{children}</main>
+          </AppLoader>
         </ThemeProvider>
         <Analytics />
       </body>

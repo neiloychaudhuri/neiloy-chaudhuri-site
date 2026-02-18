@@ -107,7 +107,7 @@
 @layer utilities {
   /* Glow effect for hover states */
   .glow-hover {
-    @apply hover:shadow-[0_0_30px_rgba(196,167,125,0.3)] dark:hover:shadow-[0_0_30px_rgba(196,167,125,0.2)];
+    @apply hover:shadow-[0_0_30px_rgba(161,161,170,0.3)] dark:hover:shadow-[0_0_30px_rgba(161,161,170,0.2)];
   }
 
   /* Text gradient */
@@ -130,7 +130,7 @@
 
 .uwnetwork-webring:hover {
   @apply shadow-xl shadow-earth-900/10 dark:shadow-black/30;
-  @apply shadow-[0_0_30px_rgba(196,167,125,0.3)] dark:shadow-[0_0_30px_rgba(196,167,125,0.2)];
+  @apply shadow-[0_0_30px_rgba(161,161,170,0.3)] dark:shadow-[0_0_30px_rgba(161,161,170,0.2)];
 }
 
 /* Hide arrows */
@@ -154,4 +154,10 @@
 .uwnetwork-webring span,
 .uwnetwork-webring p {
   @apply text-earth-600 dark:text-earth-400;
+}
+
+.galaxy-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
