@@ -13,7 +13,7 @@ const projects = [
     role: 'Built the end-to-end prototype and UX for the extension.',
     outcome:
       'Helped developers avoid risky snippets at selection time instead of after the fact.',
-    tech: 'TypeScript, Chrome APIs, OpenAI API',
+    tech: 'TypeScript, Chrome APIs, Llama-3.2B-Instruct',
   },
   {
     name: 'ImpostorGPT',
@@ -24,7 +24,7 @@ const projects = [
     role: 'Designed and implemented real-time game flow and backend.',
     outcome:
       'Supported multiple concurrent games with synchronized turns on modest infra.',
-    tech: 'React, Node.js, Socket.io, Redis',
+    tech: 'React, Node.js, Gemini API',
   },
   {
     name: 'Industry 4.0 Case Competition',

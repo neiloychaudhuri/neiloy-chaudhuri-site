@@ -19,7 +19,7 @@ const flagshipProjects = [
     role: "Built the extension MVP and end-to-end flow.",
     outcome:
       "Surfaced warnings at the copy-paste step instead of after deployment.",
-    tech: "TypeScript, Chrome APIs, OpenAI API",
+    tech: "TypeScript, Chrome APIs, Llama-3.2B-Instruct",
   },
   {
     name: "ImpostorGPT",
@@ -29,7 +29,7 @@ const flagshipProjects = [
     emphasis: "Real-time Systems, Full Stack",
     role: "Owned game design, backend, and client experience.",
     outcome: "Kept multiple concurrent games in sync with low-latency updates.",
-    tech: "React, Node.js, Socket.io, Redis",
+    tech: "React, Node.js, Gemini API",
   },
 ];
 
