@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload, FiHome } from 'react-icons/fi';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -53,7 +53,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="section-container relative flex items-center justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-8">
+          <div className="flex w-full items-center justify-center gap-3 sm:gap-8 flex-nowrap whitespace-nowrap overflow-x-auto py-1 text-sm sm:text-base">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -61,8 +61,9 @@ export default function Navbar() {
                 className={`nav-link font-medium ${
                   pathname === link.href ? 'active text-earth-900 dark:text-earth-100' : ''
                 }`}
+                aria-label={link.label}
               >
-                {link.label}
+                {link.href === '/' ? <FiHome className="w-4 h-4 sm:w-5 sm:h-5" /> : link.label}
               </Link>
             ))}
             
@@ -80,7 +81,7 @@ export default function Navbar() {
                          hover:scale-105 active:scale-95"
             >
               <FiDownload className="w-4 h-4" />
-              <span className="hidden sm:inline">Resume</span>
+              <span>Resume</span>
             </a>
           </div>
         </nav>
