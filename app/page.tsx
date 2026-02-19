@@ -99,7 +99,29 @@ export default function Home() {
               </h1>
 
               <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-0">
-                <span>
+                <span className="sm:hidden">
+                  <a
+                    href="https://uwaterloo.ca/future-students/programs/management-engineering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-4 font-medium transition-all duration-200 ease-out hover:font-bold hover:text-earth-800 dark:hover:text-earth-200"
+                  >
+                    Engineering + AI
+                  </a>{" "}
+                  @{" "}
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                    UWaterloo
+                    <Image
+                      src="/photos/UWaterlooLogo.svg"
+                      alt="University of Waterloo"
+                      width={28}
+                      height={28}
+                      className="flex-shrink-0"
+                    />
+                  </span>
+                </span>
+
+                <span className="hidden sm:inline">
                   <a
                     href="https://uwaterloo.ca/future-students/programs/management-engineering"
                     target="_blank"

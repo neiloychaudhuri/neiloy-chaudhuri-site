@@ -70,6 +70,8 @@ export default function Navbar() {
             <a
               href="/Neiloy_Chaudhuri_Resume.pdf"
               download
+              aria-label="Download resume"
+              title="Download resume"
               className="flex items-center gap-2 px-4 py-2 rounded-lg
                          bg-earth-700 dark:bg-earth-400
                          text-earth-50 dark:text-earth-900
@@ -78,7 +80,7 @@ export default function Navbar() {
                          hover:scale-105 active:scale-95"
             >
               <FiDownload className="w-4 h-4" />
-              Resume
+              <span className="hidden sm:inline">Resume</span>
             </a>
           </div>
         </nav>
