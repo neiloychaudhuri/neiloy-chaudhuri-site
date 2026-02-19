@@ -98,7 +98,7 @@ export default function Home() {
                 <DecryptedText text="Neiloy Chaudhuri" />
               </h1>
 
-              <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-0 flex items-center gap-3">
+              <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-0">
                 <span>
                   <a
                     href="https://uwaterloo.ca/future-students/programs/management-engineering"
@@ -108,15 +108,18 @@ export default function Home() {
                   >
                     Management Engineering
                   </a>{" "}
-                  @ University of Waterloo
+                  @{" "}
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                    University of Waterloo
+                    <Image
+                      src="/photos/UWaterlooLogo.svg"
+                      alt="University of Waterloo"
+                      width={28}
+                      height={28}
+                      className="flex-shrink-0"
+                    />
+                  </span>
                 </span>
-                <Image
-                  src="/photos/UWaterlooLogo.svg"
-                  alt="University of Waterloo"
-                  width={28}
-                  height={28}
-                  className="flex-shrink-0"
-                />
               </p>
             </div>
           </div>
