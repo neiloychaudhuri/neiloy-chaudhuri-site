@@ -48,7 +48,7 @@ const experiences = [
     bullets: ["Global anti-money laundering + internal tooling development"],
   },
   {
-    role: "Advanced Manufacturing Engineer Intern",
+    role: "Manufacturing Engineer Intern",
     company: "Kal-Polymers",
     period: "May 2024 – Aug 2024",
     website: "https://www.kalpolymers.com/",

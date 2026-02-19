@@ -21,7 +21,8 @@ const experiences = [
     role: "Software Engineering Intern",
     company: "TD Bank",
     period: "Jan 2025 – May 2025",
-    website: "https://www.td.com/content/dam/tdcom/canada/about-td/pdf/esg/2024-td-bank-group-statement-on-aml-atf-and-sanctions-en.pdf",
+    website:
+      "https://www.td.com/content/dam/tdcom/canada/about-td/pdf/esg/2024-td-bank-group-statement-on-aml-atf-and-sanctions-en.pdf",
     logoSrc: "/photos/TDLogo.svg",
     logoBgClass: "bg-[#54b949]",
     bullets: [
@@ -31,7 +32,7 @@ const experiences = [
     ],
   },
   {
-    role: "Advanced Manufacturing Engineer Intern",
+    role: "Manufacturing Engineer Intern",
     company: "Kal-Polymers",
     period: "May 2024 – Aug 2024",
     website: "https://www.kalpolymers.com/",
