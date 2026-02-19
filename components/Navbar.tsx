@@ -53,7 +53,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="section-container relative flex items-center justify-center">
-          <div className="flex w-full items-center justify-center gap-3 sm:gap-8 flex-nowrap whitespace-nowrap overflow-x-auto py-1 text-sm sm:text-base">
+          <div className="flex w-full items-center justify-between gap-2 sm:justify-center sm:gap-8 flex-nowrap whitespace-nowrap py-1 text-xs sm:text-base">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -73,7 +73,7 @@ export default function Navbar() {
               download
               aria-label="Download resume"
               title="Download resume"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg
+              className="flex items-center gap-1 px-2 py-1 sm:gap-2 sm:px-4 sm:py-2 rounded-lg
                          bg-earth-700 dark:bg-earth-400
                          text-earth-50 dark:text-earth-900
                          hover:bg-earth-600 dark:hover:bg-earth-300
