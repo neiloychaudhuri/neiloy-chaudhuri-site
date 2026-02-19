@@ -1,9 +1,16 @@
 'use client';
 
+import Link from "next/link";
+import Image from "next/image";
+import { FiExternalLink } from "react-icons/fi";
+
 interface ExperienceCardProps {
   role: string;
   company: string;
-  period: string;
+  period?: string;
+  website?: string;
+  logoSrc?: string;
+  logoBgClass?: string;
   bullets: string[];
   index: number;
 }
@@ -11,7 +18,9 @@ interface ExperienceCardProps {
 export default function ExperienceCard({
   role,
   company,
-  period,
+  website,
+  logoSrc,
+  logoBgClass = "bg-white/90 dark:bg-earth-900/80",
   bullets,
   index: _index,
 }: ExperienceCardProps) {
@@ -27,27 +36,49 @@ export default function ExperienceCard({
                    ring-4 ring-earth-100 dark:ring-earth-900"
       />
       
-      {/* Content */}
-      <div className="glass-card p-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+      <div className="glass-card p-6 w-full !border-earth-200/30 dark:!border-earth-700/30 border-[0.5px]">
+        <div className="mb-4 flex items-start gap-4">
+          {logoSrc && (
+            <div
+              className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-[16px] border border-black/5 p-2 shadow-[0_10px_24px_-14px_rgba(0,0,0,0.8)] ring-1 ring-black/5 dark:border-white/10 dark:ring-white/10 ${logoBgClass}`}
+            >
+              <Image
+                src={logoSrc}
+                alt={`${company} logo`}
+                fill
+                sizes="56px"
+                className="object-contain p-1"
+              />
+            </div>
+          )}
+
           <div>
             <h3 className="text-xl font-bold text-earth-800 dark:text-earth-200">
               {role}
             </h3>
-            <p className="text-earth-600 dark:text-earth-400 font-medium">
-              {company}
-            </p>
+            {website ? (
+              <Link
+                href={website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-earth-600 dark:text-earth-400 font-medium transition-all duration-200 ease-out hover:font-bold hover:text-earth-700 dark:hover:text-earth-300"
+                aria-label={`Visit ${company} website`}
+              >
+                <span>{company}</span>
+                <FiExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden />
+              </Link>
+            ) : (
+              <p className="text-earth-600 dark:text-earth-400 font-medium">
+                {company}
+              </p>
+            )}
           </div>
-          <span className="text-sm text-earth-500 dark:text-earth-500 whitespace-nowrap">
-            {period}
-          </span>
         </div>
         
-        <ul className="space-y-2">
+        <ul className="space-y-2 list-none">
           {bullets.map((bullet, i) => (
-            <li key={i} className="flex items-start gap-3 text-earth-600 dark:text-earth-400">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-earth-400 dark:bg-earth-500 flex-shrink-0" />
-              <span>{bullet}</span>
+            <li key={i} className="text-earth-600 dark:text-earth-400">
+              {bullet}
             </li>
           ))}
         </ul>

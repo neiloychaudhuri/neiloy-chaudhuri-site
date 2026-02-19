@@ -59,8 +59,18 @@ export default function DecryptedText({
     return () => cancelAnimationFrame(animationFrame);
   }, [text, steps, canStart]);
 
+  const initialScramble = useMemo(() => {
+    if (!text) return "";
+    return text
+      .split("")
+      .map((char, i) =>
+        char === " " ? " " : CHARS[(i * 7 + text.length) % CHARS.length]
+      )
+      .join("");
+  }, [text]);
+
   const display = useMemo(() => {
-    if (!canStart || !steps.length) return text;
+    if (!canStart || !steps.length) return initialScramble;
     return text
       .split("")
       .map((char, index) => {
@@ -71,7 +81,7 @@ export default function DecryptedText({
         return CHARS[rand];
       })
       .join("");
-  }, [text, frame, steps, canStart]);
+  }, [text, frame, steps, canStart, initialScramble]);
 
   return (
     <span className={className} aria-label={text}>

@@ -9,10 +9,6 @@ const projects = [
     description:
       'A real-time, AI-powered browser extension that warns developers before they copy-paste or install suspicious code, APIs, or libraries.',
     link: 'https://devpost.com/software/devguard',
-    emphasis: 'Developer Security, Product Thinking, AI Integration',
-    role: 'Built the end-to-end prototype and UX for the extension.',
-    outcome:
-      'Helped developers avoid risky snippets at selection time instead of after the fact.',
     tech: 'TypeScript, Chrome APIs, Llama-3.2B-Instruct',
   },
   {
@@ -20,10 +16,6 @@ const projects = [
     description:
       'A pass-the-phone party game where players secretly receive roles, with real-time turn-based gameplay built using React and Node.js.',
     link: 'https://github.com/neiloychaudhuri/ImpostorGPT',
-    emphasis: 'Real-time Systems, API Integration, Full Stack',
-    role: 'Designed and implemented real-time game flow and backend.',
-    outcome:
-      'Supported multiple concurrent games with synchronized turns on modest infra.',
     tech: 'React, Node.js, Gemini API',
   },
   {
@@ -31,10 +23,6 @@ const projects = [
     description:
       'A data-driven high school competition focused on manufacturing, big data, and Industry 4.0, organized at the University of Waterloo as Vice President.',
     link: 'https://www.uwindustry4.ca/',
-    emphasis: 'Leadership, Systems Thinking, Design Strategy',
-    role: 'Vice President and lead organizer for competition experience.',
-    outcome:
-      'Brought dozens of students to a multi-round competition with industry-backed cases.',
     tech: 'Figma, Notion, Google Cloud, data tooling',
   },
 ];
@@ -64,8 +52,8 @@ export default function Projects() {
                 name={project.name}
                 description={project.description}
                 link={project.link}
-                emphasis={project.emphasis}
                 index={index}
+                tech={project.tech}
               />
             ))}
           </div>

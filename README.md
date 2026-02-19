@@ -104,7 +104,6 @@ Edit the color palette in `tailwind.config.js` under `theme.extend.colors.earth`
 
 - **Projects**: Edit `app/projects/page.tsx` to update project data
 - **Experience**: Edit `app/experience/page.tsx` to update work experience
-- **About**: Edit `app/about/page.tsx` to update bio
 - **Contact**: Edit `app/contact/page.tsx` to update social links
 
 ## License

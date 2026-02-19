@@ -7,22 +7,16 @@ interface ProjectCardProps {
   name: string;
   description: string;
   link: string;
-  emphasis: string;
   index: number;
-  role?: string;
   tech?: string;
-  outcome?: string;
 }
 
 export default function ProjectCard({
   name,
   description,
   link,
-  emphasis,
   index: _index,
-  role,
   tech,
-  outcome,
 }: ProjectCardProps) {
   return (
     <motion.a
@@ -48,39 +42,13 @@ export default function ProjectCard({
         {description}
       </p>
 
-      {(role || outcome || tech) && (
-        <div className="mb-4 space-y-1 text-sm text-earth-700 dark:text-earth-300">
-          {role && (
-            <p>
-              <span className="font-medium">Role:</span> {role}
-            </p>
-          )}
-          {outcome && (
-            <p>
-              <span className="font-medium">Outcome:</span> {outcome}
-            </p>
-          )}
-          {tech && (
-            <p className="text-xs text-earth-500 dark:text-earth-400">
-              Tech: {tech}
-            </p>
-          )}
+      {tech && (
+        <div className="mb-4 text-sm text-earth-700 dark:text-earth-300">
+          <p className="text-xs text-earth-500 dark:text-earth-400">
+            Tech: {tech}
+          </p>
         </div>
       )}
-      
-      <div className="flex flex-wrap gap-2">
-        {emphasis.split(', ').map((tag, i) => (
-          <span
-            key={i}
-            className="px-3 py-1 text-sm rounded-full
-                       bg-earth-200/60 dark:bg-earth-700/60
-                       text-earth-700 dark:text-earth-300
-                       border border-earth-300/50 dark:border-earth-600/50"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
     </motion.a>
   );
 }
