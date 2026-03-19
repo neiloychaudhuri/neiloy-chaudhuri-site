@@ -19,6 +19,20 @@ const projects = [
     tech: 'React, Node.js, Gemini API',
   },
   {
+    name: 'Candid',
+    description:
+      'A BeReal-style app for private events — everyone gets notified at the same time, snaps a photo, and it all feeds into a shared album you can throw on a big screen.',
+    link: 'https://github.com/vavaviper/bereal-dupe',
+    tech: 'Next.js, React, Firebase',
+  },
+  {
+    name: 'Singe',
+    description:
+      'An AI-powered life assessment tool that gives you a brutally honest read on how "cooked" you are — complete with a leaderboard and shareable result cards.',
+    link: 'https://getsinged.com/',
+    tech: 'Next.js, Gemini API, Supabase, Three.js',
+  },
+  {
     name: 'Industry 4.0 Case Competition',
     description:
       'A data-driven high school competition focused on manufacturing, big data, and Industry 4.0, organized at the University of Waterloo as Vice President.',

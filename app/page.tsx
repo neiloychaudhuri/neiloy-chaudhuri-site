@@ -12,18 +12,18 @@ import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const flagshipProjects = [
   {
-    name: "CyberCTRL",
+    name: "Singe",
     description:
-      "AI-powered browser extension that flags risky code and dependencies before they reach your editor.",
-    link: "https://devpost.com/software/devguard",
-    tech: "TypeScript, Chrome APIs, Llama-3.2B-Instruct",
+      'An AI-powered life assessment tool that gives you a brutally honest read on how "cooked" you are — complete with a leaderboard and shareable result cards.',
+    link: "https://getsinged.com/",
+    tech: "Next.js, Gemini API, Supabase, Three.js",
   },
   {
-    name: "ImpostorGPT",
+    name: "Candid",
     description:
-      "A pass-the-phone social deduction game with turn-based logic and AI-assisted game generation.",
-    link: "https://github.com/neiloychaudhuri/ImpostorGPT",
-    tech: "React, Node.js, Gemini API",
+      "A BeReal-style app for private events — everyone gets notified at the same time, snaps a photo, and it all feeds into a shared album you can throw on a big screen.",
+    link: "https://bereal-dupe.vercel.app/",
+    tech: "Next.js, React, Firebase",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function Home() {
                 Get in touch
               </h2>
               <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg max-w-md mx-auto">
-                Open to summer 2026 internships and part-time roles.
+                Open to part-time roles.
               </p>
             </div>
 

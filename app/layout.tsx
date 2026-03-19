@@ -19,11 +19,12 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Neiloy Chaudhuri | Software Engineer",
+  title: "Neiloy Chaudhuri",
   description:
-    "Personal website of Neiloy Chaudhuri - Software Engineer with a passion for design, systems thinking, and building impactful products.",
+    "Personal website of Neiloy Chaudhuri - Engineer with a passion for design, systems thinking, and building impactful products.",
   keywords: [
     "Software Engineer",
+    "Product Manager",
     "Neiloy Chaudhuri",
     "Full Stack Developer",
     "Web Developer",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Neiloy Chaudhuri" }],
   openGraph: {
-    title: "Neiloy Chaudhuri | Software Engineer",
+    title: "Neiloy Chaudhuri",
     description:
-      "Personal website of Neiloy Chaudhuri - Software Engineer with a passion for design, systems thinking, and building impactful products.",
+      "Personal website of Neiloy Chaudhuri - Engineer with a passion for design, systems thinking, and building impactful products.",
     url: "https://neiloy.me",
     siteName: "Neiloy Chaudhuri",
     locale: "en_US",
@@ -50,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neiloy Chaudhuri | Software Engineer",
+    title: "Neiloy Chaudhuri",
     description:
-      "Personal website of Neiloy Chaudhuri - Software Engineer with a passion for design, systems thinking, and building impactful products.",
+      "Personal website of Neiloy Chaudhuri - Engineer with a passion for design, systems thinking, and building impactful products.",
     creator: "@_neiloy",
     images: ["/photos/photo1.png"],
   },
