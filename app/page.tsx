@@ -107,7 +107,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl font-display text-earth-900 mb-3">
                 Neiloy Chaudhuri
               </h1>
-              <p className="text-lg text-earth-500">
+              <p className="text-sm sm:text-lg text-earth-500">
                 <a
                   href="https://uwaterloo.ca/future-students/programs/management-engineering"
                   target="_blank"
@@ -118,18 +118,15 @@ export default function Home() {
                   <span className="sm:hidden">Engineering + AI</span>
                 </a>{" "}
                 <span className="hidden sm:inline">@ University of Waterloo</span>
-                <span className="sm:hidden inline-flex items-center gap-1.5">
-                  @{" "}
-                  <span className="inline-flex items-center gap-1.5">
-                    UWaterloo
-                    <Image
-                      src="/photos/UWaterlooLogo.svg"
-                      alt="University of Waterloo"
-                      width={22}
-                      height={22}
-                      className="flex-shrink-0"
-                    />
-                  </span>
+                <span className="sm:hidden inline-flex items-center gap-1 whitespace-nowrap">
+                  @ UWaterloo
+                  <Image
+                    src="/photos/UWaterlooLogo.svg"
+                    alt="University of Waterloo"
+                    width={16}
+                    height={16}
+                    className="flex-shrink-0"
+                  />
                 </span>
                 <span className="hidden sm:inline-flex items-center gap-1.5 ml-1.5 translate-y-1">
                   <Image

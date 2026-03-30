@@ -19,7 +19,7 @@ export default function SocialIcon({ href, icon: Icon, label, index: _index }: S
       className="flex items-center gap-2 text-sm text-earth-500 hover:text-earth-900 transition-colors"
     >
       <Icon className="w-4 h-4" />
-      <span>{label}</span>
+      <span className="hidden sm:inline">{label}</span>
     </a>
   );
 }

@@ -45,14 +45,14 @@ export default function ExperienceCard({
       {/* Content */}
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-4 mb-1">
-          <div>
+          <div className="min-w-0">
             <h3 className="text-base font-semibold text-earth-900">{role}</h3>
             {website ? (
               <Link
                 href={website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-earth-500 hover:text-earth-700 transition-colors"
+                className="inline-flex items-center gap-1 text-sm text-earth-500 hover:text-earth-700 transition-colors truncate"
                 aria-label={`Visit ${company} website`}
               >
                 {company}
