@@ -43,7 +43,7 @@ const experiences = [
     ],
   },
   {
-    role: "Software Engineering",
+    role: "Software Engineer",
     company: "TD Bank",
     period: "Jan 2025 – May 2025",
     website:
