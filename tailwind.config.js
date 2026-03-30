@@ -25,7 +25,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-garamond)', 'Georgia', 'serif'],
+        display: ['var(--font-instrument-serif)', 'Georgia', 'serif'],
       },
       backdropBlur: {
         xs: '2px',

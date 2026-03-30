@@ -1,61 +1,68 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import PageTransition from "@/components/PageTransition";
-import Galaxy from "@/components/Galaxy";
 import ProjectCard from "@/components/ProjectCard";
-import DecryptedText from "@/components/DecryptedText";
 import ExperienceCard from "@/components/ExperienceCard";
 import SocialIcon from "@/components/SocialIcon";
-import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin, FiTwitter, FiFileText } from "react-icons/fi";
 
 const flagshipProjects = [
   {
     name: "Singe",
     description:
-      'An AI-powered life assessment tool that gives you a brutally honest read on how "cooked" you are — complete with a leaderboard and shareable result cards.',
+      "Designed and shipped a consumer AI app from 0 → 1. Defined the product concept, scoring logic, and virality mechanics (leaderboard + shareable results). Live with real users.",
     link: "https://getsinged.com/",
-    tech: "Next.js, Gemini API, Supabase, Three.js",
   },
   {
     name: "Candid",
     description:
-      "A BeReal-style app for private events — everyone gets notified at the same time, snaps a photo, and it all feeds into a shared album you can throw on a big screen.",
+      "Created a BeReal-style shared album app for private events. Designed product scope, image classification and location-based event discovery.",
     link: "https://bereal-dupe.vercel.app/",
-    tech: "Next.js, React, Firebase",
   },
 ];
 
 const experiences = [
   {
-    role: "Data Engineer Intern",
+    role: "Product Manager",
+    company: "Communitech",
+    website: "https://www.communitech.ca/",
+    logoSrc: "/photos/CommunitechLogo.jpg",
+    logoBgClass: "bg-white",
+    bullets: ["Incoming summer 2026"],
+  },
+  {
+    role: "Data Engineer",
     company: "Spectrum Health Care",
     period: "Sep 2025 – Dec 2025",
     website: "https://spectrumhealthcare.com/",
     logoSrc: "/photos/SHCLogo.png",
     logoBgClass: "bg-white",
-    bullets: ["Special populations + patient intake "],
+    bullets: [
+      "Special populations + patient intake"
+    ],
   },
   {
-    role: "Software Engineering Intern",
+    role: "Software Engineering",
     company: "TD Bank",
     period: "Jan 2025 – May 2025",
     website:
       "https://www.td.com/content/dam/tdcom/canada/about-td/pdf/esg/2024-td-bank-group-statement-on-aml-atf-and-sanctions-en.pdf",
     logoSrc: "/photos/TDLogo.svg",
     logoBgClass: "bg-[#54b949]",
-    bullets: ["Global anti-money laundering + internal tooling development"],
+    bullets: [
+      "Global anti-money laundering + internal tooling development"
+    ],
   },
   {
-    role: "Manufacturing Engineer Intern",
+    role: "Manufacturing Engineer",
     company: "Kal-Polymers",
     period: "May 2024 – Aug 2024",
     website: "https://www.kalpolymers.com/",
     logoSrc: "/photos/KalPolymersLogo.jpeg",
     logoBgClass: "bg-white",
     bullets: [
-      "Implemented Industry 4.0 solutions to optimize manufacturing processes.",
+      "Implemented Industry 4.0 solutions to optimize manufacturing processes"
     ],
   },
 ];
@@ -67,11 +74,6 @@ const socials = [
     label: "Email",
   },
   {
-    href: "https://github.com/neiloychaudhuri",
-    icon: FiGithub,
-    label: "GitHub",
-  },
-  {
     href: "https://www.linkedin.com/in/neiloyc/",
     icon: FiLinkedin,
     label: "LinkedIn",
@@ -81,154 +83,143 @@ const socials = [
     icon: FiTwitter,
     label: "X (Twitter)",
   },
+  {
+    href: "https://github.com/neiloychaudhuri",
+    icon: FiGithub,
+    label: "GitHub",
+  },
+  {
+    href: "/Neiloy_Chaudhuri_Resume.pdf",
+    icon: FiFileText,
+    label: "Resume",
+  },
 ];
 
 export default function Home() {
   return (
     <PageTransition>
-      <div className="fixed inset-0 z-0 bg-[#050505]">
-        <Galaxy starSpeed={0.25} glowIntensity={0.2} />
-      </div>
+      <div className="max-w-3xl mx-auto px-6 sm:px-8">
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        <section className="pt-12 pb-6 sm:pt-16 sm:pb-6 relative overflow-hidden">
-          <div className="section-container">
-            <div className="max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl mb-3 text-earth-800 dark:text-earth-100 font-semibold">
-                <DecryptedText text="Neiloy Chaudhuri" />
+        {/* Hero */}
+        <section className="pt-16 pb-8 sm:pt-20 sm:pb-10">
+          <div className="flex items-center gap-0">
+            <div className="flex-1">
+              <h1 className="text-4xl sm:text-5xl font-display text-earth-900 mb-3">
+                Neiloy Chaudhuri
               </h1>
-
-              <p className="text-lg sm:text-xl text-earth-600 dark:text-earth-400 mb-0">
-                <span className="sm:hidden">
-                  <a
-                    href="https://uwaterloo.ca/future-students/programs/management-engineering"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-dotted underline-offset-4 font-medium transition-all duration-200 ease-out hover:font-bold hover:text-earth-800 dark:hover:text-earth-200"
-                  >
-                    Engineering + AI
-                  </a>{" "}
+              <p className="text-lg text-earth-500">
+                <a
+                  href="https://uwaterloo.ca/future-students/programs/management-engineering"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-dotted underline-offset-4 hover:text-earth-700 transition-colors"
+                >
+                  <span className="hidden sm:inline">Management Engineering</span>
+                  <span className="sm:hidden">Engineering + AI</span>
+                </a>{" "}
+                <span className="hidden sm:inline">@ University of Waterloo</span>
+                <span className="sm:hidden inline-flex items-center gap-1.5">
                   @{" "}
-                  <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1.5">
                     UWaterloo
                     <Image
                       src="/photos/UWaterlooLogo.svg"
                       alt="University of Waterloo"
-                      width={28}
-                      height={28}
+                      width={22}
+                      height={22}
                       className="flex-shrink-0"
                     />
                   </span>
                 </span>
-
-                <span className="hidden sm:inline">
-                  <a
-                    href="https://uwaterloo.ca/future-students/programs/management-engineering"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-dotted underline-offset-4 font-medium transition-all duration-200 ease-out hover:font-bold hover:text-earth-800 dark:hover:text-earth-200"
-                  >
-                    Management Engineering
-                  </a>{" "}
-                  @{" "}
-                  <span className="inline-flex items-center gap-2 whitespace-nowrap">
-                    University of Waterloo
-                    <Image
-                      src="/photos/UWaterlooLogo.svg"
-                      alt="University of Waterloo"
-                      width={28}
-                      height={28}
-                      className="flex-shrink-0"
-                    />
-                  </span>
+                <span className="hidden sm:inline-flex items-center gap-1.5 ml-1.5 translate-y-1">
+                  <Image
+                    src="/photos/UWaterlooLogo.svg"
+                    alt="University of Waterloo"
+                    width={22}
+                    height={22}
+                    className="flex-shrink-0"
+                  />
                 </span>
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Experience timeline */}
-        <section id="experience" className="pt-0 pb-6 sm:pb-6">
-          <div className="section-container">
-            <div className="mb-8">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200">
-                Experience
-              </h2>
-            </div>
-
-            <div className="relative">
-              {experiences.map((exp, index) => (
-                <ExperienceCard
-                  key={`${exp.company}-${exp.role}`}
-                  role={exp.role}
-                  company={exp.company}
-                  period={exp.period}
-                  website={exp.website}
-                  logoSrc={exp.logoSrc}
-                  logoBgClass={exp.logoBgClass}
-                  bullets={exp.bullets}
-                  index={index}
-                />
-              ))}
+            <div className="w-28 flex justify-center shrink-0">
+              <Image
+                src="/neiloy-sketch.gif"
+                alt="Neiloy Chaudhuri"
+                width={80}
+                height={80}
+              />
             </div>
           </div>
         </section>
 
-        {/* Flagship projects preview */}
-        <section id="projects" className="pt-0 pb-6 sm:pb-6">
-          <div className="section-container">
-            <div className="flex items-baseline justify-between mb-8">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200">
-                Selected work
-              </h2>
-              <Link
-                href="/projects"
-                className="text-sm text-earth-600 dark:text-earth-400 hover:text-earth-800 dark:hover:text-earth-200 underline-offset-4 hover:underline"
-              >
-                View all projects
-              </Link>
-            </div>
+        <div className="border-t border-earth-200" />
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {flagshipProjects.map((project, index) => (
-                <ProjectCard
-                  key={project.name}
-                  name={project.name}
-                  description={project.description}
-                  link={project.link}
-                  index={index}
-                  tech={project.tech}
-                />
-              ))}
-            </div>
+        {/* Experience */}
+        <section id="experience" className="py-8 sm:py-10">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-earth-400 mb-8">
+            Experience
+          </h2>
+          <div>
+            {experiences.map((exp, index) => (
+              <ExperienceCard
+                key={`${exp.company}-${exp.role}`}
+                role={exp.role}
+                company={exp.company}
+                period={exp.period}
+                website={exp.website}
+                logoSrc={exp.logoSrc}
+                logoBgClass={exp.logoBgClass}
+                bullets={exp.bullets}
+                index={index}
+              />
+            ))}
           </div>
         </section>
 
-        {/* Contact / social links */}
-        <section id="contact" className="pt-0 pb-16 sm:pb-20">
-          <div className="section-container">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-earth-800 dark:text-earth-200 mb-3">
-                Get in touch
-              </h2>
-              <p className="text-earth-600 dark:text-earth-400 text-base sm:text-lg max-w-md mx-auto">
-                Open to part-time roles.
-              </p>
-            </div>
+        <div className="border-t border-earth-200" />
 
-            <div className="flex justify-center gap-6 flex-wrap items-center">
-              {socials.map((social, index) => (
-                <SocialIcon
-                  key={social.label}
-                  href={social.href}
-                  icon={social.icon}
-                  label={social.label}
-                  index={index}
-                />
-              ))}
-            </div>
+        {/* Projects */}
+        <section id="projects" className="py-8 sm:py-10">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-earth-400 mb-8">
+            Selected Work
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {flagshipProjects.map((project, index) => (
+              <ProjectCard
+                key={project.name}
+                name={project.name}
+                description={project.description}
+                link={project.link}
+                index={index}
+              />
+            ))}
           </div>
         </section>
+
+        <div className="border-t border-earth-200" />
+
+        {/* Contact */}
+        <section id="contact" className="py-8 sm:py-10">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-earth-400 mb-4">
+            Get in touch
+          </h2>
+          <p className="text-earth-600 text-base mb-8">
+            Reach out via email or connect on LinkedIn.
+          </p>
+          <div className="flex gap-5 flex-wrap items-center">
+            {socials.map((social, index) => (
+              <SocialIcon
+                key={social.label}
+                href={social.href}
+                icon={social.icon}
+                label={social.label}
+                index={index}
+              />
+            ))}
+          </div>
+        </section>
+
       </div>
     </PageTransition>
   );

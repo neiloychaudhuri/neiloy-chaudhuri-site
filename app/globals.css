@@ -6,158 +6,35 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-earth-50 text-earth-900 dark:bg-earth-900 dark:text-earth-100;
-    @apply transition-colors duration-300;
+    @apply text-earth-900;
+    background-color: #faf8f5;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-earth-100 dark:bg-earth-800;
+    @apply bg-earth-50;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-earth-400 dark:bg-earth-600 rounded-full;
+    @apply bg-earth-300 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-earth-500 dark:bg-earth-500;
+    @apply bg-earth-400;
   }
 
-  /* Selection styling */
   ::selection {
-    @apply bg-earth-400/40 dark:bg-earth-400/30;
+    @apply bg-earth-200;
   }
 }
 
 @layer components {
-  /* Glassmorphism base */
-  .glass {
-    @apply bg-earth-50/70 dark:bg-earth-800/60;
-    @apply backdrop-blur-md;
-    @apply border border-earth-200/50 dark:border-earth-700/50;
-    @apply shadow-lg shadow-earth-900/5 dark:shadow-black/20;
-  }
-
-  .glass-card {
-    @apply glass rounded-2xl;
-    @apply hover:shadow-xl hover:shadow-earth-900/10 dark:hover:shadow-black/30;
-    @apply transition-all duration-300;
-  }
-
-  /* Button styles */
-  .btn-primary {
-    @apply px-6 py-3 rounded-xl;
-    @apply bg-earth-700 dark:bg-earth-400;
-    @apply text-earth-50 dark:text-earth-900;
-    @apply font-medium;
-    @apply hover:bg-earth-600 dark:hover:bg-earth-300;
-    @apply hover:scale-105;
-    @apply active:scale-95;
-    @apply transition-all duration-200;
-    @apply shadow-md hover:shadow-lg;
-  }
-
-  .btn-secondary {
-    @apply px-6 py-3 rounded-xl;
-    @apply bg-transparent;
-    @apply border-2 border-earth-600 dark:border-earth-400;
-    @apply text-earth-700 dark:text-earth-300;
-    @apply font-medium;
-    @apply hover:bg-earth-600 dark:hover:bg-earth-400;
-    @apply hover:text-earth-50 dark:hover:text-earth-900;
-    @apply hover:scale-105;
-    @apply active:scale-95;
-    @apply transition-all duration-200;
-  }
-
-  /* Link hover effect */
-  .nav-link {
-    @apply relative text-earth-700 dark:text-earth-300;
-    @apply hover:text-earth-900 dark:hover:text-earth-100;
-    @apply transition-colors duration-200;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5;
-    @apply bg-earth-600 dark:bg-earth-400;
-    @apply transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-
-  .nav-link.active::after {
-    @apply w-full;
-  }
-
-  /* Section container */
   .section-container {
-    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-12;
+    @apply max-w-3xl mx-auto px-6 sm:px-8;
   }
-}
-
-@layer utilities {
-  /* Glow effect for hover states */
-  .glow-hover {
-    @apply hover:shadow-[0_0_30px_rgba(161,161,170,0.3)] dark:hover:shadow-[0_0_30px_rgba(161,161,170,0.2)];
-  }
-
-  /* Text gradient */
-  .text-gradient {
-    @apply bg-gradient-to-r from-earth-700 via-earth-600 to-earth-500;
-    @apply dark:from-earth-300 dark:via-earth-400 dark:to-earth-500;
-    @apply bg-clip-text text-transparent;
-  }
-}
-
-/* UWaterloo Webring Styling */
-.uwnetwork-webring {
-  @apply p-5 rounded-2xl;
-  @apply bg-earth-50/70 dark:bg-earth-800/60;
-  @apply backdrop-blur-md;
-  @apply border border-earth-200/50 dark:border-earth-700/50;
-  @apply shadow-lg shadow-earth-900/5 dark:shadow-black/20;
-  @apply transition-all duration-300;
-}
-
-.uwnetwork-webring:hover {
-  @apply shadow-xl shadow-earth-900/10 dark:shadow-black/30;
-  @apply shadow-[0_0_30px_rgba(161,161,170,0.3)] dark:shadow-[0_0_30px_rgba(161,161,170,0.2)];
-}
-
-/* Hide arrows */
-.uwnetwork-webring a[href*="prev"],
-.uwnetwork-webring a[href*="next"],
-.uwnetwork-webring .prev,
-.uwnetwork-webring .next,
-.uwnetwork-webring [class*="arrow"],
-.uwnetwork-webring [class*="nav"] {
-  display: none !important;
-}
-
-/* Style the webring text/link */
-.uwnetwork-webring a {
-  @apply text-earth-600 dark:text-earth-400;
-  @apply hover:text-earth-800 dark:hover:text-earth-200;
-  @apply transition-colors duration-200;
-  text-decoration: none !important;
-}
-
-.uwnetwork-webring span,
-.uwnetwork-webring p {
-  @apply text-earth-600 dark:text-earth-400;
-}
-
-.galaxy-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
