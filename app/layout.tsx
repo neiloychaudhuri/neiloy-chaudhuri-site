@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/photos/photo1.png",
+        url: "/thumbnail_me.jpg",
         width: 1200,
         height: 630,
         alt: "Neiloy Chaudhuri",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description:
       "Neiloy Chaudhuri — Management Engineering student at the University of Waterloo, seeking product management opportunities.",
     creator: "@_neiloy",
-    images: ["/photos/photo1.png"],
+    images: ["/thumbnail_me.jpg"],
   },
   robots: {
     index: true,
