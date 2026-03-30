@@ -47,23 +47,30 @@ export default function ExperienceCard({
         <div className="flex items-start justify-between gap-4 mb-1">
           <div className="min-w-0">
             <h3 className="text-base font-semibold text-earth-900">{role}</h3>
-            {website ? (
-              <Link
-                href={website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-earth-500 hover:text-earth-700 transition-colors truncate"
-                aria-label={`Visit ${company} website`}
-              >
-                {company}
-                <FiExternalLink className="w-3 h-3" aria-hidden />
-              </Link>
-            ) : (
-              <p className="text-sm text-earth-500">{company}</p>
-            )}
+            <div className="flex items-center gap-2 flex-wrap">
+              {website ? (
+                <Link
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-earth-500 hover:text-earth-700 transition-colors"
+                  aria-label={`Visit ${company} website`}
+                >
+                  {company}
+                  <FiExternalLink className="w-3 h-3" aria-hidden />
+                </Link>
+              ) : (
+                <p className="text-sm text-earth-500">{company}</p>
+              )}
+              {period && (
+                <span className="text-xs text-earth-400 tabular-nums sm:hidden">
+                  {period}
+                </span>
+              )}
+            </div>
           </div>
           {period && (
-            <span className="text-sm text-earth-400 shrink-0 tabular-nums">
+            <span className="text-sm text-earth-400 shrink-0 tabular-nums hidden sm:block">
               {period}
             </span>
           )}
