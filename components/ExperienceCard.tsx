@@ -47,7 +47,7 @@ export default function ExperienceCard({
         <div className="flex items-start justify-between gap-4 mb-1">
           <div className="min-w-0">
             <h3 className="text-base font-semibold text-earth-900">{role}</h3>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 gap-0.5">
               {website ? (
                 <Link
                   href={website}
