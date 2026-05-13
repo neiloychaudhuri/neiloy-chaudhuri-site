@@ -29,7 +29,7 @@ const experiences = [
     website: "https://www.communitech.ca/",
     logoSrc: "/photos/CommunitechLogo.jpg",
     logoBgClass: "bg-white",
-    bullets: ["Incoming summer 2026"],
+    bullets: ["Waterloo Region AI Coalition (WRAIC)"],
   },
   {
     role: "Data Engineer",
