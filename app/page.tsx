@@ -26,6 +26,7 @@ const experiences = [
   {
     role: "Product Manager",
     company: "Communitech",
+    period: "May 2026 - Present",
     website: "https://www.communitech.ca/",
     logoSrc: "/photos/CommunitechLogo.jpg",
     logoBgClass: "bg-white",
