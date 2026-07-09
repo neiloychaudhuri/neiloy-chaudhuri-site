@@ -24,7 +24,7 @@ const flagshipProjects = [
 
 const experiences = [
   {
-    role: "Technical Product Manager",
+    role: "Product Manager",
     company: "Communitech",
     period: "May 2026 - Present",
     website: "https://www.communitech.ca/",
