@@ -63,7 +63,7 @@ const experiences = [
     logoSrc: "/photos/KalPolymersLogo.jpeg",
     logoBgClass: "bg-white",
     bullets: [
-      "Implemented Industry 4.0 solutions to optimize manufacturing processes"
+      "Manufacturing process optimization"
     ],
   },
 ];
