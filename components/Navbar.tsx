@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FiDownload } from 'react-icons/fi';
+import { FiFileText } from 'react-icons/fi';
 
 const navLinks = [
   { href: '/#experience', label: 'Experience' },
@@ -70,13 +70,14 @@ export default function Navbar() {
 
           <a
             href="/Neiloy_Chaudhuri_Resume.pdf"
-            download
-            aria-label="Download resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View resume"
             className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg
                        bg-earth-900 text-white hover:bg-earth-700
                        transition-colors duration-200"
           >
-            <FiDownload className="w-3.5 h-3.5" />
+            <FiFileText className="w-3.5 h-3.5" />
             Resume
           </a>
         </div>
