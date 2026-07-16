@@ -11,7 +11,7 @@ const flagshipProjects = [
   {
     name: "Singe",
     description:
-      "Designed and shipped a consumer AI app from 0 → 1. Defined the product concept, scoring logic, and virality mechanics (leaderboard + shareable results). Live with real users.",
+      "Designed and shipped a consumer AI app from 0 → 1. Defined the product concept, scoring logic, and virality mechanics (leaderboard + shareable results). Live with 5k+ YTD users.",
     link: "https://getsinged.com/",
   },
   {
