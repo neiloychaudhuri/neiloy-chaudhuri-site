@@ -26,11 +26,11 @@ const experiences = [
   {
     role: "Product Manager",
     company: "Communitech",
-    period: "May 2026 - Present",
+    period: "May 2026 - Aug 2026",
     website: "https://www.communitech.ca/",
     logoSrc: "/photos/CommunitechLogo.jpg",
     logoBgClass: "bg-white",
-    bullets: ["Waterloo Region AI Coalition (WRAIC)"],
+    bullets: ["AI@WORK | Waterloo Region AI Coalition (WRAIC)"],
   },
   {
     role: "Data Engineer",
