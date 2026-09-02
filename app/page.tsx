@@ -27,7 +27,7 @@ const experiences = [
     role: "Product Manager",
     company: "Communitech",
     period: "May 2026 - Aug 2026",
-    website: "https://www.communitech.ca/",
+    website: "https://www.communitech.ca/programs/ai-at-work/",
     logoSrc: "/photos/CommunitechLogo.jpg",
     logoBgClass: "bg-white",
     bullets: ["AI@WORK | Waterloo Region AI Coalition (WRAIC)"],
