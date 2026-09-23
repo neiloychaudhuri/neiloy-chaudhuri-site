@@ -25,6 +25,15 @@ const flagshipProjects = [
 const experiences = [
   {
     role: "Product Manager",
+    company: "Amplify Care",
+    period: "Sep 2026 - Present",
+    website: "https://www.amplifycare.com/solutions/AI/",
+    logoSrc: "/photos/AmplifyCareLogo.png",
+    logoBgClass: "bg-white",
+    bullets: ["Product development + agentic AI innovation"],
+  },
+  {
+    role: "Product Manager",
     company: "Communitech",
     period: "May 2026 - Aug 2026",
     website: "https://www.communitech.ca/programs/ai-at-work/",
